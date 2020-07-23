@@ -1,0 +1,169 @@
+/* variables */
+
+$white: #f7f7f7;
+$grey-light: #a1a1a2;
+$grey-dark: #121215;
+$blue: #9fd4e4;
+
+$font-main: "Montserrat", sans-serif;
+$font-decor: "Roboto", sans-serif;
+
+/* global*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $white;
+  font-family: $font-main;
+  color: $grey-dark;
+}
+
+.logo {
+  background-image: url(../images/logo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+section {
+  border: solid 1px red;
+  display: flex;
+}
+
+.container-left {
+  border: solid 2px blue;
+  width: 50%;
+  text-align: right;
+  padding: 0 30px 0 220px;
+}
+
+.container-right {
+  border: solid 2px yellow;
+  width: 50%;
+  text-align: left;
+  padding: 0 220px 0 30px;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 17px;
+  margin: 120px 0 50px 0;
+}
+
+button {
+  background-color: $blue;
+  color: $white;
+  font-size: 17px;
+  font-weight: bold;
+  width: 150px;
+  height: 50px;
+  border: none;
+  text-transform: uppercase;
+  margin: 80px 20px 100px;
+}
+
+button:hover {
+  color: $grey-dark;
+}
+
+button:active {
+  background-color: $grey-dark;
+  color: $white;
+}
+
+/* header */
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 10px 50px;
+  align-items: center;
+}
+
+nav ul li {
+  margin: 0 20px;
+  font-weight: bold;
+}
+
+nav ul li:hover {
+  color: $blue;
+}
+
+/* home */
+
+.home {
+  background-image: url(../images/syntechbackground-1.PNG);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 800px;
+}
+
+.home h1 {
+  text-transform: uppercase;
+  font-size: 75px;
+  font-weight: normal;
+  margin: 120px 0 0 0;
+  padding: 0;
+}
+
+.home p {
+  margin: 80px 0 0 0;
+  padding: 0;
+  font-size: 22px;
+}
+
+/* our work */
+
+.our-work hr {
+  width: 250px;
+  margin: 0 0 0 auto;
+}
+
+/* offer */
+
+.offer ul {
+  list-style-type: none;
+  margin: 80px 0 150px 0;
+}
+
+.offer ul li {
+  margin: 30px 0;
+  padding: 0 0 10px 0;
+  font-size: 20px;
+  font-family: $font-decor;
+  border-bottom: 1px solid $grey-dark;
+}
+
+/* contact */
+
+.contact {
+  background-color: $grey-dark;
+}
+
+.contact .contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form .e-mail {
+  margin: 150px 0 50px auto;
+  width: 300px;
+  height: 30px;
+}
+
+.contact-form .message {
+  margin: 0;
+  height: 500px;
+}
