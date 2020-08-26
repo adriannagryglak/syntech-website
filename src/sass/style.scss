@@ -34,19 +34,16 @@ body {
 }
 
 section {
-  border: solid 1px red;
   display: flex;
 }
 
 .container-left {
-  border: solid 2px blue;
   width: 50%;
   text-align: right;
   padding: 0 30px 0 220px;
 }
 
-.container-right {
-  border: solid 2px yellow;
+.container-right {  
   width: 50%;
   text-align: left;
   padding: 0 220px 0 30px;
@@ -131,19 +128,117 @@ nav ul li:hover {
   margin: 0 0 0 auto;
 }
 
+.our-work .container-right {
+  background-color: #121215;
+  color: $white;
+  padding: 0;
+}
+
+.slider {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  
+}
+
+.slider-stage {
+  width: 300px;
+  margin: 0;
+  overflow-x: hidden;
+  margin: 120px auto 50px auto;
+}
+
+.sliders-nav {
+  display: flex;
+  justify-content: center;
+  margin: 150px 0 50px 0;
+}
+
+.sliders-nav hr {
+  width: 30px;
+  margin: 0 15px;
+}
+
+.slide{
+  display: flex;
+  border: solid 1px green;
+  height: 300px;
+
+}
+
+.number{
+  width: 100px;
+
+}
+.text{
+  width: 200px;
+}
+
+.number p{
+  transform: rotate(-90deg);
+}
+
+.slide p{
+  margin: 0;
+  padding: 0;
+}
+
 /* offer */
 
+.offer {
+  background-image: url(../images/grayscale-photography-of-sea-3560136.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.offer::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: $white;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.offer .container-left {
+  z-index: 1;
+}
+
+.offer .container-right {
+  padding: 0;
+  position: relative;
+}
+
 .offer ul {
-  list-style-type: none;
+  list-style: none;
   margin: 80px 0 150px 0;
 }
 
 .offer ul li {
   margin: 30px 0;
-  padding: 0 0 10px 0;
+  padding: 10px;
   font-size: 20px;
   font-family: $font-decor;
   border-bottom: 1px solid $grey-dark;
+}
+
+.offer ul li:hover {
+  border: 2px solid $blue;
+}
+
+.offer-details {
+  width: 80%;
+  height: 80%;
+  background-color: $white;
+  opacity: 0.8;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
 }
 
 /* contact */
@@ -158,12 +253,48 @@ nav ul li:hover {
 }
 
 .contact-form .e-mail {
-  margin: 150px 0 50px auto;
-  width: 300px;
+  margin: 150px 0 30px auto;
+  max-width: 300px;
   height: 30px;
 }
 
 .contact-form .message {
   margin: 0;
   height: 500px;
+  text-align: right;
+  padding: 10px 0;
+}
+
+.contact-form .message::placeholder{
+  font-family: $font-main;
+ 
+}
+
+.contact button{
+  margin: 30px 20px 100px;
+}
+
+.contact .container-right{
+  padding: 0;
+  position: relative;
+}
+.contact .container-right ul{
+  list-style-type: none;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.contact .container-right ul li{
+  color: $white;
+  margin: 30px 0;
+}
+
+/* footer */
+
+footer{
+  display: flex;
+  justify-content: center;
 }
