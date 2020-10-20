@@ -8,6 +8,11 @@ $blue: #9fd4e4;
 $font-main: "Montserrat", sans-serif;
 $font-decor: "Roboto", sans-serif;
 
+/* hiding content*/
+.hidden{
+  display: none;;
+}
+
 /* global*/
 
 *,
@@ -80,15 +85,9 @@ button:active {
 
 section {
   display: flex;
-  opacity: 1;
   max-height: 800px;
-  transition: all 0.2s;
 }
 
-.hidden{
-  opacity: 0;
-  max-height: 0;
-}
 
 /* navigation*/
 
@@ -102,20 +101,21 @@ nav ul {
   align-items: center;
 }
 
-nav ul li {
+nav ul li a{
   margin: 0 20px;
   font-weight: bold;
-  transition: 0.5s; 
+  transition: 0.5s;
+  text-decoration: none; 
 }
 
-nav ul li:hover {
+nav ul li a:hover {
   color: $blue;
   cursor: pointer;
 }
 
 /* home */
 
-.home {
+#home {
   background-image: url(../images/syntechbackground-1.PNG);
   background-size: cover;
   background-repeat: no-repeat;
@@ -123,7 +123,7 @@ nav ul li:hover {
   height: 100vh;
 }
 
-.home h1 {
+#home h1 {
   text-transform: uppercase;
   font-size: 75px;
   font-weight: normal;
@@ -131,7 +131,7 @@ nav ul li:hover {
   padding: 0;
 }
 
-.home p {
+#home p {
   margin: 60px 0 0 0;
   padding: 0;
   font-size: 19px;
@@ -139,12 +139,7 @@ nav ul li:hover {
 
 /* our work */
 
-.our-work hr {
-  width: 250px;
-  margin: 0 0 0 auto;
-}
-
-.our-work .container-right {
+#our-work .container-right {
   background-color: #121215;
   color: $white;
   padding: 0;
@@ -216,7 +211,7 @@ nav ul li:hover {
 
 /* offer */
 
-.offer {
+#offer {
   background-image: url(../images/grayscale-photography-of-sea-3560136.jpg);
   background-size: cover;
   background-position: center center;
@@ -224,7 +219,7 @@ nav ul li:hover {
   position: relative;
 }
 
-.offer::after {
+#offer::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -234,20 +229,20 @@ nav ul li:hover {
   z-index: 0;
 }
 
-.offer .container-left {
+#offer .container-left {
   z-index: 1;
 }
 
-.offer .container-right {
+#offer .container-right {
   position: relative;
 }
 
-.offer ul {
+#offer ul {
   list-style: none;
   margin: 80px 0 150px 0;
 }
 
-.offer ul li {
+#offer ul li {
   margin: 30px 0;
   padding: 10px;
   font-size: 20px;
@@ -257,7 +252,7 @@ nav ul li:hover {
   
 }
 
-.offer ul li:hover{
+#offer ul li:hover{
   border: 1px solid $blue;
 }
 
@@ -273,15 +268,15 @@ nav ul li:hover {
 
 /* contact */
 
-.contact {
+#contact {
   background-color: $grey-dark;
 }
 
-.contact h2{
+#contact h2{
   color: $white;
 }
 
-.contact .contact-form {
+#contact .contact-form {
   display: flex;
   flex-direction: column;
 }
@@ -310,16 +305,16 @@ nav ul li:hover {
   font-family: $font-main;
 }
 
-.contact button{
+#contact button{
   margin: 30px 0;
 }
 
-.contact .container-right{
+#contact .container-right{
   position: relative;
   padding-left: 0;
 }
 
-.contact .container-right ul{
+#contact .container-right ul{
   list-style-type: none;
   margin: 0;
   padding-left: 30px;
@@ -329,10 +324,11 @@ nav ul li:hover {
   border-left: 1px solid $white;
 }
 
-.contact .container-right ul li{
+#contact .container-right ul li{
   color: $white;
   margin: 30px 0;
 }
+
 
 /* footer */
 
