@@ -4,9 +4,9 @@ const myScript = function () {
 
 
   //smooth scroll for offer and contact pages
-  const scroll = new SmoothScroll('.navbar .smooth-scroll', {
-    speed: 800
-  });
+  //const scroll = new SmoothScroll('.navbar .smooth-scroll', {
+  //  speed: 800
+  //});
 
   //navigation
 
@@ -19,7 +19,7 @@ const myScript = function () {
   const startBtn = document.querySelector('.start');
   const linkContact = document.querySelector('a[href="#contact');
   const linkOffer = document.querySelector('a[href="#offer');
-  
+
 
   //po kliknięciu w link schowaj wszystkie sekcje i pokaż naszą
 
@@ -41,31 +41,64 @@ const myScript = function () {
 
   startBtn.addEventListener('click', function () {
     if (landingPages.classList.contains('hidden') === true) {
-      console.log('usuwam klase hidden');
       landingPages.classList.remove('hidden');
-    }else{
-      console.log('teraz normalnie przeładuję stronkę');
+    } else {
       window.location.reload();
     }
   });
 
   //jeśli landingi mają klasę hidden po klknięciu na kontakt lub ofertę pokaż je i wtedy prowadź
-  
-  linkOffer.addEventListener('click', function(){
-    console.log('klik w offer');
-    if (landingPages.classList.contains('hidden')=== true) {
+
+  linkOffer.addEventListener('click', function () {
+    if (landingPages.classList.contains('hidden') === true) {
       landingPages.classList.remove('hidden');
+      sectionProjects.classList.add('hidden');
+      sectionReferences.classList.add('hidden');
     }
   });
 
-  linkContact.addEventListener('click', function(){
-    console.log('klik w contact');
-    if (landingPages.classList.contains('hidden')=== true) {
+  linkContact.addEventListener('click', function () {
+    if (landingPages.classList.contains('hidden') === true) {
       landingPages.classList.remove('hidden');
+      sectionProjects.classList.add('hidden');
+      sectionReferences.classList.add('hidden');
     }
   });
 
+  // slider 
 
+  const slider = document.querySelector('.slider');
+  const slides = document.querySelectorAll('.slider li');
+  const slideWidth = slides[0].clientWidth;
+  let currentIndex = 0;
+  let slidesNumber = slides.length - 1;
+  const kreski = document.querySelectorAll('.sliders-nav hr');
+
+  function goToSlide(index) {
+    if (index < 0) {
+      index = slidesNumber;
+    } else if (index > slidesNumber) {
+      index = 0;
+    }
+    slider.style.left = index * (-slideWidth) + 'px';
+    currentIndex = index;
+
+    for (let kreska of kreski) {
+      kreska.classList.remove('active-slide');
+    }
+
+    kreski[index].classList.add('active-slide');
+  }
+
+  function nextSlide() {
+    goToSlide(currentIndex + 1);
+  }
+
+  setInterval(nextSlide, 2000);
+
+  //po kliknięciu w hr weź jej index i pokaż slide który ma jej indeks oraz aktywuj nextSlide
+  // co znaczy pokaż slide? przesuń w lewo o tyle szerokości jaki jest numer slajdu? Hm Hm matematyka
+  //i nie rób tego przy każdym go to slide- tylko raz na początku nadaj im eventlistenery i już. 
 
 
 
