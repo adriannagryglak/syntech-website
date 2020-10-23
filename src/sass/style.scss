@@ -170,8 +170,9 @@ nav ul li a:hover {
 }
 
 .sliders-nav hr {
-  width: 30px;
   margin: 0 15px;
+  cursor: pointer;
+  width: 30px;
 }
 
 .slide{
@@ -239,6 +240,7 @@ nav ul li a:hover {
 
 #offer .container-right {
   position: relative;
+  z-index: 1;
 }
 
 #offer ul {

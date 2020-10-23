@@ -65,7 +65,7 @@ const myScript = function () {
     }
   });
 
-  // slider 
+  // obsługa slidera 
 
   const slider = document.querySelector('.slider');
   const slides = document.querySelectorAll('.slider li');
@@ -100,9 +100,38 @@ const myScript = function () {
   // co znaczy pokaż slide? przesuń w lewo o tyle szerokości jaki jest numer slajdu? Hm Hm matematyka
   //i nie rób tego przy każdym go to slide- tylko raz na początku nadaj im eventlistenery i już. 
 
+  for (let kreska of kreski) {
+    //let indexkreski = kreski.indexOf(kreska);
+    //console.log(indexkreski);
+    kreska.addEventListener('click', function (event) {
+      event.preventDefault();
 
+      console.log('kliknelam w kreske');
 
+    });
+  }
 
+  function offerDisplay() {
+
+    const offerLinks = document.querySelectorAll('#offer ul li');
+
+    for (let link of offerLinks) {
+      let detailsId = link.getAttribute('title');
+      let detailsText = document.getElementById(detailsId);
+      const allDetails = document.querySelectorAll('.offer-details p');
+
+      link.addEventListener('click', function () {
+        for (let allDetail of allDetails){
+          allDetail.classList.add('hidden');
+          if(allDetail.id===detailsId){
+            detailsText.classList.remove('hidden');
+          }
+        }
+      });
+    }
+  }
+
+  offerDisplay();
 
 
 
