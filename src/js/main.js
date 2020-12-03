@@ -13,22 +13,29 @@ const myScript = function () {
   //znajdź potrzebne elementy
   const sectionProjects = document.querySelector('#projects');
   const sectionReferences = document.querySelector('#references');
-  const linkProjects = document.querySelector('a[href="#projects"] ');
+  const linksProjects = document.querySelectorAll('a[href="#projects"]');
   const linkReferences = document.querySelector('a[href="#references"] ');
   const landingPages = document.querySelector('.pages');
   const startBtn = document.querySelector('.start');
   const linkContact = document.querySelector('a[href="#contact');
   const linkOffer = document.querySelector('a[href="#offer');
 
-
   //po kliknięciu w link schowaj wszystkie sekcje i pokaż naszą
 
-  linkProjects.addEventListener('click', function () {
 
-    landingPages.classList.add('hidden');
-    sectionReferences.classList.add('hidden');
-    sectionProjects.classList.remove('hidden');
-  });
+  for (let link of linksProjects) {
+
+    link.addEventListener('click', function () {
+
+      landingPages.classList.add('hidden');
+      sectionReferences.classList.add('hidden');
+      sectionProjects.classList.remove('hidden');
+
+      console.log('klik w projekty');
+    });
+
+  }
+
 
   linkReferences.addEventListener('click', function () {
 
@@ -45,6 +52,8 @@ const myScript = function () {
     } else {
       window.location.reload();
     }
+    sectionProjects.classList.add('hidden');
+    sectionReferences.classList.add('hidden');
   });
 
   //jeśli landingi mają klasę hidden po klknięciu na kontakt lub ofertę pokaż je i wtedy prowadź
@@ -111,6 +120,9 @@ const myScript = function () {
     });
   }
 
+  // oferta 
+
+
   function offerDisplay() {
 
     const offerLinks = document.querySelectorAll('#offer ul li');
@@ -118,13 +130,13 @@ const myScript = function () {
     for (let link of offerLinks) {
       let detailsId = link.getAttribute('title');
       let detailsText = document.getElementById(detailsId);
-      const allDetails = document.querySelectorAll('.offer-details p');
+      const allDetails = document.querySelectorAll('.offer-details p, .offer-details ul');
 
       link.addEventListener('click', function () {
-        for (let allDetail of allDetails){
-          allDetail.classList.add('hidden');
-          if(allDetail.id===detailsId){
-            detailsText.classList.remove('hidden');
+        for (let allDetail of allDetails) {
+          allDetail.classList.add('hidden-offer');
+          if (allDetail.id === detailsId) {
+            detailsText.classList.remove('hidden-offer');
           }
         }
       });
@@ -132,6 +144,92 @@ const myScript = function () {
   }
 
   offerDisplay();
+
+  /* go up button
+
+  const goUp = tubędzie buttonik
+
+  goUp.addEventListener('click', function () {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  });
+*/
+
+
+  // FLUID IMAGE POP UP section references
+
+  const imgPopUp = document.querySelector('.img-pop-up');
+  const images = document.querySelectorAll('.img-container img');
+  const fullImage = document.querySelector('.full-img');
+
+  images.forEach(image => {
+    image.addEventListener('click', function () {
+      imgPopUp.classList.add('open');
+      fullImage.classList.add('open');
+      //dynamic change image and caption
+
+      const imageSource = image.getAttribute('src');
+      fullImage.src = imageSource;
+    });
+  });
+
+  imgPopUp.addEventListener('click', function (event) {
+    if (event.target.classList.contains('img-pop-up')) {
+      imgPopUp.classList.remove('open');
+      fullImage.classList.remove('open');
+    }
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

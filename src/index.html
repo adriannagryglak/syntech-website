@@ -1,147 +1,307 @@
 <!DOCTYPE html>
 <html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width initial-scale=1.0 shrink-to-fit=no"
+    />
+    <title>Biuro projektowe Syntech</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width initial-scale=1.0 shrink-to-fit=no">
-        <title>Biuro projektowe Syntech</title>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Roboto:wght@300&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <ul>
+          <li><a class="smooth-scroll" href="#offer">oferta</a></li>
+          <li><a href="#projects">projekty</a></li>
+          <li>
+            <a class="start" href="#"><span class="logo start"></span></a>
+          </li>
+          <li><a href="#references">referencje</a></li>
+          <li><a class="smooth-scroll" href="#contact">kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <body>
-
-        <header>
-            <nav class="navbar">
-                <ul>
-                    <li><a class="smooth-scroll" href="#offer">oferta</a></li>
-                    <li><a href="#projects">projekty</a></li>
-                    <li><a class="start" href="#"><span class="logo start"></span></a></li> 
-                    <li><a href="#references">referencje</a></li>
-                    <li><a class="smooth-scroll" href="#contact">kontakt</a></li>
-                </ul>
-            </nav>
-        </header>
-
-
-        <div class="pages">
-            <section id="home">
-                <div class="container-left">
-                    <h1>syntech</h1>
-                    <p>Jesteśmy Firmą, która od 1990 r. zajmuje się projektowaniem sieci i obiektów związanych z infrastrukturą techniczną.
-                    <br>Specjalizujemy się w projektowaniu sieci zewnętrznych: wodociągowych, gazowych, kanalizacyjnych i ciepłowniczych.</p>
-                </div>
-            </section>
-
-            <section id="our-work">
-                <div class="container-left">
-                    <h2>Opracowaliśmy około 400 wielobranżowych projektów. Rezultatem naszej pracy jest zaprojektowanie między innymi:</h2>
-                    <hr>
-                    <button>projekty</button>
-                </div>
-                <div class="container-right carousel">
-                    <div class="slider-stage">
-                        <ul class="slider">
-                            <li class="slide">
-                                <div class="number">
-                                    <p>31</p>   
-                                </div>
-                                <div class="text">
-                                    <p>tysięcy metrów sieci wodociągowych</p>
-                                </div>
-                            </li>
-                            <li class="slide">
-                                <div class="number">
-                                    <p>32</p>   
-                                </div>
-                                <div class="text">
-                                    <p>tysięcy metrów sieci kanalizacyjnych</p>
-                                </div>
-                            </li>
-                            <li class="slide">
-                                <div class="number">
-                                    <p>33</p>   
-                                </div>
-                                <div class="text">
-                                    <p>tysięcy metrów sieci kanalizacyjnych</p>
-                                </div>
-                            </li>
-                            <li class="slide">
-                                <div class="number">
-                                    <p>34</p>   
-                                </div>
-                                <div class="text">
-                                    <p>tysięcy metrów sieci kanalizacyjnych</p>
-                                </div>
-                            </li>
-                        </ul> 
-                    </div>
-                        <div class="sliders-nav">
-                            <hr>
-                            <hr>
-                            <hr>
-                            <hr>
-                        </div>
-                    
-                </div>
-            </section>
-
-            <section id="offer">
-                <div class="container-left">
-                    <h2>Oferujemy wykonanie następującej dokumentacji technicznej:</h2>
-                    <ul>
-                        <li title="sieci-gazowe">sieci gazowe</li>
-                        <li title="wodociągi">wodociągi</li>
-                        <li title="kanalizacja">kanalizacja</li>
-                        <li title="ciepłownictwo">ciepłownictwo</li>
-                        <li title="ochrona-środowiska">ochrona środowiska</li>
-                    </ul>
-                </div>
-                <div class="container-right">
-                    <div class="offer-details">
-                        <p id="sieci-gazowe" class="hidden">sialalalala szczegół sieci g</p>
-                        <p id="wodociągi" class="hidden">sialalalala szczegół wodociagi</p>
-                        <p id="kanalizacja" class="hidden">sialalalala szczegół kanaly</p>
-                        <p id="ciepłownictwo" class="hidden">sialalalala szczegół cieplo</p>
-                        <p id="ochrona-środowiska" class="hidden">sialalalala szczegół ochronaśr</p>
-
-                    </div>
-                </div>
-            </section>
-
-            <section id="contact">
-                <div class="container-left">
-                    <h2>skontaktuj się z nami !</h2>
-                    <div class="contact-form">
-                        <input type="email" placeholder="Twój e-mail" class="e-mail" required>
-                        <textarea placeholder="Tu wpisz treść zapytania" class="message" required></textarea>
-                    </div>
-                    <button>wyślij</button>
-                </div>
-                <div class="container-right">
-                        <ul>
-                            <li>Biuro Projektowe SYNTECH</li>
-                            <li>Synowiec i Juda spółka jawna</li>
-                            <li>ul. Urocza 22</li>
-                            <li>58-500 Jelenia Góra</li>
-                            <li>tel. 075/ 753 38 56</li>
-                            <li>fax 075/ 753 38 57</li>
-                            <li>NIP 611-260-69-98</li>
-                        </ul>
-                </div>
-            </section>
+    <div class="pages">
+      <section id="home">
+        <div class="container-left">
+          <h1>syntech</h1>
+          <p>
+            Jesteśmy Firmą, która od 1990 r. zajmuje się projektowaniem sieci i
+            obiektów związanych z infrastrukturą techniczną.
+            <br />Specjalizujemy się w projektowaniu sieci zewnętrznych:
+            wodociągowych, gazowych, kanalizacyjnych i ciepłowniczych.
+          </p>
         </div>
+      </section>
 
-        <section id="projects" class="hidden">sialalalaprio</section>
-        <section id="references" class="hidden">asdhasdhkasjdha refe</section>
+      <section id="our-work">
+        <div class="container-left">
+          <h2>
+            Opracowaliśmy około 400 wielobranżowych projektów. Rezultatem naszej
+            pracy jest zaprojektowanie między innymi:
+          </h2>
+          <div class="btn-cont">
+            <a href="#projects" class="btn">
+              projekty
+              <span class="line-1"></span>
+              <span class="line-2"></span>
+              <span class="line-3"></span>
+              <span class="line-4"></span>
+            </a>
+          </div>
+        </div>
+        <div class="container-right carousel">
+          <div class="slider-stage">
+            <ul class="slider">
+              <li class="slide">
+                <div class="number">
+                  <p>160</p>
+                </div>
+                <div class="text">
+                  <p>tysięcy metrów <br />sieci wodociągowych</p>
+                </div>
+              </li>
+              <li class="slide">
+                <div class="number">
+                  <p>280</p>
+                </div>
+                <div class="text">
+                  <p>tysięcy metrów <br />sieci kanalizacyjnych</p>
+                </div>
+              </li>
+              <li class="slide">
+                <div class="number">
+                  <p>370</p>
+                </div>
+                <div class="text">
+                  <p>tysięcy metrów <br />sieci gazowych</p>
+                </div>
+              </li>
+              <li class="slide">
+                <div class="number">
+                  <p>30</p>
+                </div>
+                <div class="text">
+                  <p>przepompowni ścieków</p>
+                </div>
+              </li>
+              <li class="slide">
+                <div class="number">
+                  <p>9</p>
+                </div>
+                <div class="text">
+                  <p>stacji redukcji gazu</p>
+                </div>
+              </li>
+              <li class="slide">
+                <div class="number">
+                  <p>12</p>
+                </div>
+                <div class="text">
+                  <p>oczyszczalni ścieków</p>
+                </div>
+              </li>
+              <li class="slide">
+                <div class="number">
+                  <p>3</p>
+                </div>
+                <div class="text">
+                  <p>stacje uzdatniania wody</p>
+                </div>
+              </li>
+              <li class="slide">
+                <div class="number">
+                  <p>20</p>
+                </div>
+                <div class="text">
+                  <p>
+                    operatów wodno-prawnych na pobór wód powierzchniowych i
+                    podziemnych
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="sliders-nav">
+            <hr />
+            <hr />
+            <hr />
+            <hr />
+            <hr />
+            <hr />
+            <hr />
+            <hr />
+          </div>
+        </div>
+      </section>
 
-        <footer>
-            <span class="logo"></span>
-            <p>yntech biuro projektowe Synowiec i Juda spółka jawna</p>
-        </footer>
-        <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
-        <script src="js/main.js"></script>
-    </body>
+      <section id="offer">
+        <div class="container-left">
+          <h2>Oferujemy wykonanie następującej dokumentacji technicznej:</h2>
+          <ul class="offer-nav">
+            <li title="sieci-gazowe"><a>sieci gazowe</a></li>
+            <li title="wodociągi"><a>wodociągi</a></li>
+            <li title="kanalizacja"><a>kanalizacja</a></li>
+            <li title="ciepłownictwo"><a>ciepłownictwo</a></li>
+            <li title="ochrona-środowiska"><a>ochrona środowiska</a></li>
+          </ul>
+        </div>
+        <div class="container-right">
+          <div class="offer-details">
+            <ul id="sieci-gazowe" class="hidden-offer offer-list">
+              <li>
+                sieci gazowe zewnętrzne, średniego i niskiego ciśnienia (z
+                przyłączami)
+              </li>
+              <li>stacje redukcyjne</li>
+            </ul>
+            <ul id="wodociągi" class="hidden-offer offer-list">
+              <li>sieci wodociągowe z przyłączami</li>
+              <li>pompownie</li>
+              <li>ujęcia wody podziemnej (studnie)</li>
+              <li>stacje uzdatniania wody</li>
+              <li>pompownie i stacje hydroforowe</li>
+              <li>zbiorniki wody pitnej i przemysłowej</li>
+            </ul>
+            <ul id="kanalizacja" class="hidden-offer offer-list">
+              <li>sieci kanalizacyjne z przyłączami</li>
+              <li>kanalizacja deszczowa, sanitarna i ogólnospławna</li>
+              <li>kanalizacja grawitacyjna, ciśnieniowa i podciśnieniowa</li>
+              <li>kanały otwarte, pompownie</li>
+              <li>zbiorniki retencyjne i retencyjne - infiltracyjne</li>
+            </ul>
+            <ul id="ciepłownictwo" class="hidden-offer offer-list">
+              <li>kotłownie (gazowe, olejowe oraz pompy ciepła)</li>
+              <li>sieci cieplne</li>
+              <li>węzły cieplne</li>
+            </ul>
+            <ul id="ochrona-środowiska" class="hidden-offer offer-list">
+              <li>
+                oczyszczalnie ścieków (deszczowych, sanitarnych, przemysłowych)
+              </li>
+              <li>obiekty gospodarki odpadowej</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
+      <section id="contact">
+        <div class="container-left">
+          <h2>skontaktuj się z nami !</h2>
+          <div class="contact-form">
+            <input
+              type="email"
+              placeholder="Twój e-mail"
+              class="e-mail"
+              required
+            />
+            <textarea
+              placeholder="Tu wpisz treść zapytania"
+              class="message"
+              required
+            ></textarea>
+          </div>
+          <div class="btn-cont">
+            <a class="btn">
+              wyślij
+              <span class="line-1"></span>
+              <span class="line-2"></span>
+              <span class="line-3"></span>
+              <span class="line-4"></span>
+            </a>
+          </div>
+        </div>
+        <div class="container-right">
+          <ul>
+            <li>Biuro Projektowe SYNTECH</li>
+            <li>Synowiec i Juda spółka jawna</li>
+            <li>ul. Urocza 22</li>
+            <li>58-500 Jelenia Góra</li>
+            <li>tel. 075/ 753 38 56</li>
+            <li>fax 075/ 753 38 57</li>
+            <li>NIP 611-260-69-98</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <section id="projects" class="hidden"><p>sialalalaprio</p></section>
+
+    <section id="references" class="hidden">
+      <div class="img-pop-up">
+        <img src="" alt="" class="full-img" />
+      </div>
+      <div class="container-left">
+        <div class="img-container">
+          <img src="./images/jelfa.jpg" alt="" />
+        </div>
+        <div class="text-container">
+          <p>Urząd Gminy w Mysłakowicach</p>
+        </div>
+        <div class="img-container">
+          <img src="./images/ref_jel_gora.jpg" alt="" />
+        </div>
+        <div class="text-container">
+          <p>Miasto <br />Jelenia Góra</p>
+          >
+        </div>
+        <div class="img-container">
+          <img src="./images/ref_piechowice.jpg" alt="" />
+        </div>
+        <div class="text-container">
+          <p>
+            Przedsiębiorstwo Wodociągów i Kanalizacji „WODNIK” w Jeleniej Górze
+          </p>
+        </div>
+        <div class="img-container">
+          <img src="./images/wodnik2.jpg" alt="" />
+        </div>
+      </div>
+      <div class="container-right">
+        <div class="text-container">
+          <p>Przedsiębiorstwo Farmaceutyczne Jelfa S.A. Jelenia Góra</p>
+        </div>
+        <div class="img-container">
+          <img src="./images/myslakowice.jpg" alt="" />
+        </div>
+        <div class="text-container">
+          <p>Urząd Miasta <br />Piechowice</p>
+        </div>
+        <div class="img-container">
+          <img src="./images/ref_lubomierz.jpg" alt="" />
+        </div>
+        <div class="text-container">
+          <p>Burmistrz Gminy i Miasta Lubomierz</p>
+        </div>
+        <div class="img-container">
+          <img src="./images/wodnik.jpg" alt="" />
+        </div>
+        <div class="text-container">
+          <p>
+            Przedsiębiorstwo Wodociągów i Kanalizacji „WODNIK” w Jeleniej Górze
+          </p>
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span class="logo"></span>
+      <p>yntech biuro projektowe Synowiec i Juda spółka jawna</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
