@@ -4,17 +4,17 @@ const myScript = function () {
 
 
   //smooth scroll for offer and contact pages
-  //const scroll = new SmoothScroll('.navbar .smooth-scroll', {
-  //  speed: 800
-  //});
+  const scroll = new SmoothScroll('.navbar .smooth-scroll', {
+    speed: 800
+  });
 
   //navigation
 
   //znajdź potrzebne elementy
   const sectionProjects = document.querySelector('#projects');
   const sectionReferences = document.querySelector('#references');
-  const linksProjects = document.querySelectorAll('a[href="#projects"]');
-  const linkReferences = document.querySelector('a[href="#references"] ');
+  const linksProjects = document.querySelectorAll('.projects-link');
+  const linkReferences = document.querySelector('.references-link');
   const landingPages = document.querySelector('.pages');
   const startBtn = document.querySelector('.start');
   const linkContact = document.querySelector('a[href="#contact');
@@ -22,23 +22,19 @@ const myScript = function () {
 
   //po kliknięciu w link schowaj wszystkie sekcje i pokaż naszą
 
-
   for (let link of linksProjects) {
-
     link.addEventListener('click', function () {
-
       landingPages.classList.add('hidden');
       sectionReferences.classList.add('hidden');
       sectionProjects.classList.remove('hidden');
-
-      console.log('klik w projekty');
+      window.scroll({
+        top: 0,
+        left: 0,
+      });
     });
-
   }
 
-
   linkReferences.addEventListener('click', function () {
-
     landingPages.classList.add('hidden');
     sectionProjects.classList.add('hidden');
     sectionReferences.classList.remove('hidden');
@@ -54,6 +50,12 @@ const myScript = function () {
     }
     sectionProjects.classList.add('hidden');
     sectionReferences.classList.add('hidden');
+
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
   });
 
   //jeśli landingi mają klasę hidden po klknięciu na kontakt lub ofertę pokaż je i wtedy prowadź
@@ -120,8 +122,7 @@ const myScript = function () {
     });
   }
 
-  // oferta 
-
+  // oferta szczegoły w boxie białym
 
   function offerDisplay() {
 
