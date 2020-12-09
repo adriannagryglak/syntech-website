@@ -1,16 +1,12 @@
 const myScript = function () {
   // Some amazing code...1.variables 2.methods 3. event listeners i initializations
 
-
-
   //smooth scroll for offer and contact pages
-  const scroll = new SmoothScroll('.navbar .smooth-scroll', {
-    speed: 800
-  });
+  //const scroll = new SmoothScroll('.navbar .smooth-scroll', {
+  // speed: 800
+  //});
 
   //navigation
-
-  //znajdź potrzebne elementy
   const sectionProjects = document.querySelector('#projects');
   const sectionReferences = document.querySelector('#references');
   const linksProjects = document.querySelectorAll('.projects-link');
@@ -20,8 +16,16 @@ const myScript = function () {
   const linkContact = document.querySelector('a[href="#contact');
   const linkOffer = document.querySelector('a[href="#offer');
 
-  //po kliknięciu w link schowaj wszystkie sekcje i pokaż naszą
+  //preload animacja
 
+  window.addEventListener('load', function () {
+    const preload = document.querySelector('.preload');
+    preload.classList.add('finished');
+    preload.remove();
+
+  });
+
+  //linki do sekcji projekty
   for (let link of linksProjects) {
     link.addEventListener('click', function () {
       landingPages.classList.add('hidden');
@@ -34,14 +38,14 @@ const myScript = function () {
     });
   }
 
+  //link do sekcji referencje 
   linkReferences.addEventListener('click', function () {
     landingPages.classList.add('hidden');
     sectionProjects.classList.add('hidden');
     sectionReferences.classList.remove('hidden');
   });
 
-  //jeśli landingi nie mają klasy hidden - przycisk start ma przeładować a jeśli mają - ma ją odebrać. 
-
+  //link START
   startBtn.addEventListener('click', function () {
     if (landingPages.classList.contains('hidden') === true) {
       landingPages.classList.remove('hidden');
@@ -50,7 +54,6 @@ const myScript = function () {
     }
     sectionProjects.classList.add('hidden');
     sectionReferences.classList.add('hidden');
-
     window.scroll({
       top: 0,
       left: 0,
@@ -58,8 +61,7 @@ const myScript = function () {
     });
   });
 
-  //jeśli landingi mają klasę hidden po klknięciu na kontakt lub ofertę pokaż je i wtedy prowadź
-
+  //linki do oferty i kontaktu
   linkOffer.addEventListener('click', function () {
     if (landingPages.classList.contains('hidden') === true) {
       landingPages.classList.remove('hidden');
@@ -67,7 +69,6 @@ const myScript = function () {
       sectionReferences.classList.add('hidden');
     }
   });
-
   linkContact.addEventListener('click', function () {
     if (landingPages.classList.contains('hidden') === true) {
       landingPages.classList.remove('hidden');
@@ -77,7 +78,6 @@ const myScript = function () {
   });
 
   // obsługa slidera 
-
   const slider = document.querySelector('.slider');
   const slides = document.querySelectorAll('.slider li');
   const slideWidth = slides[0].clientWidth;
@@ -97,7 +97,6 @@ const myScript = function () {
     for (let kreska of kreski) {
       kreska.classList.remove('active-slide');
     }
-
     kreski[index].classList.add('active-slide');
   }
 
@@ -107,32 +106,15 @@ const myScript = function () {
 
   setInterval(nextSlide, 2000);
 
-  //po kliknięciu w hr weź jej index i pokaż slide który ma jej indeks oraz aktywuj nextSlide
-  // co znaczy pokaż slide? przesuń w lewo o tyle szerokości jaki jest numer slajdu? Hm Hm matematyka
-  //i nie rób tego przy każdym go to slide- tylko raz na początku nadaj im eventlistenery i już. 
-
-  for (let kreska of kreski) {
-    //let indexkreski = kreski.indexOf(kreska);
-    //console.log(indexkreski);
-    kreska.addEventListener('click', function (event) {
-      event.preventDefault();
-
-      console.log('kliknelam w kreske');
-
-    });
-  }
-
-  // oferta szczegoły w boxie białym
-
+  //szczegoły oferty
   function offerDisplay() {
-
     const offerLinks = document.querySelectorAll('#offer ul li');
-
     for (let link of offerLinks) {
       let detailsId = link.getAttribute('title');
       let detailsText = document.getElementById(detailsId);
       const allDetails = document.querySelectorAll('.offer-details p, .offer-details ul');
 
+      // DODAĆ RESPONSYWNY POP-UP 
       link.addEventListener('click', function () {
         for (let allDetail of allDetails) {
           allDetail.classList.add('hidden-offer');
@@ -145,6 +127,47 @@ const myScript = function () {
   }
 
   offerDisplay();
+
+
+
+  function offerDisplayMobile() {
+
+    window.addEventListener('resize', function () {
+  
+      const containerRight = document.querySelector('#offer .container-right');
+      if (window.innerWidth < 580) {
+
+        containerRight.style.display = 'none';
+        console.log('wywalilem container righ');
+
+        //jak klikne na li z .offer-nav
+        //wezme od niego wartosc atrybutu title
+        //znajde po nim id mojej ul w .oofer-details
+        //wyswietle to ul albo jako dziecko mojego li
+        //togglując mu klasę hidden offer mobile 
+
+      } else {
+        containerRight.style.display = 'block';
+        console.log('przywrocilem kontenerek');
+      }
+    });
+
+
+
+
+    //   if (x.matches) { // If media query matches
+    //     document.body.style.backgroundColor = "yellow";
+    //   } else {
+    //     document.body.style.backgroundColor = "pink";
+    //   }
+    // }
+
+    // let x = window.matchMedia("(max-width: 700px)")
+    // myFunction(x) // Call listener function at run time
+    // x.addListener(myFunction) // Attach listener function on state changes
+  }
+
+  offerDisplayMobile();
 
   /* go up button
 
@@ -160,7 +183,7 @@ const myScript = function () {
 */
 
 
-  // FLUID IMAGE POP UP section references
+  //wyswietlenie pelnego zdjecia w referencjach
 
   const imgPopUp = document.querySelector('.img-pop-up');
   const images = document.querySelectorAll('.img-container img');
@@ -170,8 +193,6 @@ const myScript = function () {
     image.addEventListener('click', function () {
       imgPopUp.classList.add('open');
       fullImage.classList.add('open');
-      //dynamic change image and caption
-
       const imageSource = image.getAttribute('src');
       fullImage.src = imageSource;
     });
@@ -186,50 +207,24 @@ const myScript = function () {
 
 
 
+  // //atrakcyjny kursor
 
+  // let mouseCursor = document.querySelector('.cursor');
+  // const clickableElements = document.querySelectorAll('.navbar ul li a, .btn, .offer-nav li');
 
+  // window.addEventListener('mousemove', function (event) {
+  //   mouseCursor.style.top = event.pageY + 'px';
+  //   mouseCursor.style.left = event.pageX + 'px';
+  // });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  // clickableElements.forEach(function (element) {
+  //   element.addEventListener('mouseleave', function () {
+  //     mouseCursor.classList.remove('could-click');
+  //   });
+  //   element.addEventListener('mouseover', function () {
+  //     mouseCursor.classList.add('could-click');
+  //   });
+  // });
 
 
 
