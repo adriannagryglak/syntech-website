@@ -9,20 +9,13 @@ $font-main: "Montserrat", sans-serif;
 $font-decor: "Raleway", sans-serif;
 
 /* hiding content*/
+
 .hidden {
   display: none;
 }
 
 .active-slide {
   border: 2px solid $blue;
-}
-
-.hidden-offer {
-  opacity: 0;
-}
-
-.hidden-offer-mobile{
-  height: 0;
 }
 
 /* global*/
@@ -508,6 +501,9 @@ nav ul li a:focus {
 #offer .container-right {
   position: relative;
   z-index: 1;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 
 .offer-nav {
@@ -515,9 +511,9 @@ nav ul li a:focus {
   margin: 80px 0 150px 0;
 }
 
-.offer-nav li {
-  margin: 30px 0;
-  padding: 10px;
+.offer-nav > li p {
+  padding: 15px 10px;
+  margin: 10px;
   font-size: 15px;
   font-family: $font-main;
   font-weight: bold;
@@ -525,42 +521,64 @@ nav ul li a:focus {
   border-top: 1px solid rgba(0, 0, 0, 0);
   text-transform: uppercase;
   transition: all 0.2s ease-out;
-}
-
-.offer-nav li a {
+  position: relative;
   text-decoration: none;
   color: $grey-dark;
 }
 
-.offer-nav li:hover {
+.offer-nav > li {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.offer-nav > li p:hover {
   border: 1px solid $blue;
   cursor: pointer;
 }
 
-.offer-details {
-  width: 80%;
-  height: 80%;
-  background-color: $white;
-  opacity: 0.8;
-  position: absolute;
-  transform: translateY(-50%);
-  top: 50%;
-  position: relative;
+.offer-nav > li p:focus {
+  border: 1px solid $blue;
+  outline: none;
 }
 
 .offer-list {
-  margin: 0;
-  padding: 0;
-  font-size: 18px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  transition: all 0.5s ease-out;
+  overflow: hidden;
+  font-weight: bold;
+  list-style-type: disc;
+  padding: 0 0 0 20px;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  height: 0;
+
+  &.active-offer-wide {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    opacity: 1;
+    font-weight: 300;
+    width: 80%;
+  }
+
+  &.active-offer-mobile {
+    height: auto;
+    pointer-events: none;
+    opacity: 1;
+  }
 }
 
 .offer-list li {
   margin: 10px 0;
+}
+
+.offer-details {
+  height: 80%;
+  width: 80%;
+  background-color: $white;
+  margin: 0;
+  position: relative;
 }
 
 /* contact */
@@ -855,6 +873,11 @@ footer p {
 }
 
 /* media quaries? */
+@media (max-width: 1335px){
+  #home h1{
+    margin-bottom: 10px;
+  }
+}
 
 @media (max-width: 1180px) {
   #home h1 {
@@ -976,6 +999,8 @@ footer p {
       flex-direction: column;
     }
 
+    
+
     #references {
       flex-direction: row;
     }
@@ -1034,7 +1059,7 @@ footer p {
     #home p {
       width: 80%;
     }
-
+    
     .projects-details {
       display: none;
     }
@@ -1072,7 +1097,6 @@ footer p {
     #references .text-container {
       max-width: 150px;
     }
-
   }
 
   @media (max-width: 400px) {
@@ -1110,9 +1134,13 @@ footer p {
     #projects {
       padding: 50px 15px;
     }
-    
+
     .projects-specifics .project {
       font-size: 12px;
+    }
+
+    #offer {
+      max-height: none;
     }
   }
 }

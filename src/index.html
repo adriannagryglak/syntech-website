@@ -8,7 +8,7 @@
     />
     <title>Biuro projektowe Syntech</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Raleway:wght@100;200;400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&family=Raleway:wght@100;200;400&display=swap"
       rel="stylesheet"
     />
     <link
@@ -28,9 +28,9 @@
       <nav class="navbar">
         <ul>
           <li id="mobile-nav-1"><a href="#offer" class="smooth-scroll">oferta</a></li>
-          <li id="mobile-nav-2"><a class="projects-link">projekty</a></li>
-          <li id="mobile-nav-3"><a class="start" href="#"><span class="logo start"></span></a></li>
-          <li id="mobile-nav-4"><a class="references-link">referencje</a></li>
+          <li id="mobile-nav-2"><a href="" onclick="return false;" class="projects-link">projekty</a></li>
+          <li id="mobile-nav-3"><a href="#" class="start" ><span class="logo start"></span></a></li>
+          <li id="mobile-nav-4"><a href="" onclick="return false;" class="references-link">referencje</a></li>
           <li id="mobile-nav-5"><a href="#contact" class="smooth-scroll" >kontakt</a></li>
         </ul>
       </nav>
@@ -56,7 +56,7 @@
             pracy jest zaprojektowanie między innymi:
           </h2>
           <div class="btn-cont">
-            <a class="btn projects-link">
+            <a class="btn projects-link" href="" onclick="return false;">
               projekty
               <span class="line-1"></span>
               <span class="line-2"></span>
@@ -151,52 +151,62 @@
       </section>
 
       <section id="offer">
+
         <div class="container-left">
           <h2>Oferujemy wykonanie następującej dokumentacji technicznej:</h2>
+
           <ul class="offer-nav">
-            <li title="sieci-gazowe"><a>sieci gazowe</a></li>
-            <li title="wodociągi"><a>wodociągi</a></li>
-            <li title="kanalizacja"><a>kanalizacja</a></li>
-            <li title="ciepłownictwo"><a>ciepłownictwo</a></li>
-            <li title="ochrona-środowiska"><a>ochrona środowiska</a></li>
+            <li>
+              <p title="sieci-gazowe" tabindex="1">sieci gazowe</p>
+              <ul id="sieci-gazowe" class="offer-list">
+                <li>sieci gazowe zewnętrzne, średniego i niskiego ciśnienia (z przyłączami)</li>
+                <li>stacje redukcyjne</li>
+              </ul>
+            </li>
+            <li >
+              <p title="wodociągi" tabindex="1">wodociągi</p>
+              <ul id="wodociągi" class="offer-list">
+                <li>sieci wodociągowe z przyłączami</li>
+                <li>pompownie</li>
+                <li>ujęcia wody podziemnej (studnie)</li>
+                <li>stacje uzdatniania wody</li>
+                <li>pompownie i stacje hydroforowe</li>
+                <li>zbiorniki wody pitnej i przemysłowej</li>
+              </ul>
+            </li>
+            <li>
+              <p title="kanalizacja" tabindex="1">kanalizacja</p>
+              <ul id="kanalizacja" class="offer-list">
+                <li>sieci kanalizacyjne z przyłączami</li>
+                <li>kanalizacja deszczowa, sanitarna i ogólnospławna</li>
+                <li>kanalizacja grawitacyjna, ciśnieniowa i podciśnieniowa</li>
+                <li>kanały otwarte, pompownie</li>
+                <li>zbiorniki retencyjne i retencyjne - infiltracyjne</li>
+              </ul>
+            </li>
+            <li>
+              <p title="ciepłownictwo" tabindex="1">ciepłownictwo</p>
+              <ul id="ciepłownictwo" class="offer-list">
+                <li>kotłownie (gazowe, olejowe oraz pompy ciepła)</li>
+                <li>sieci cieplne</li>
+                <li>węzły cieplne</li>
+              </ul>
+            </li>
+            <li>
+              <p title="ochrona-środowiska" tabindex="1">ochrona środowiska</p>
+              <ul id="ochrona-środowiska" class="offer-list">
+                <li>
+                  oczyszczalnie ścieków (deszczowych, sanitarnych, przemysłowych)
+                </li>
+                <li>obiekty gospodarki odpadowej</li>
+              </ul>
+            </li>
           </ul>
+          
         </div>
+
         <div class="container-right">
-          <div class="offer-details">
-            <ul id="sieci-gazowe" class="hidden-offer offer-list">
-              <li>
-                sieci gazowe zewnętrzne, średniego i niskiego ciśnienia (z
-                przyłączami)
-              </li>
-              <li>stacje redukcyjne</li>
-            </ul>
-            <ul id="wodociągi" class="hidden-offer offer-list">
-              <li>sieci wodociągowe z przyłączami</li>
-              <li>pompownie</li>
-              <li>ujęcia wody podziemnej (studnie)</li>
-              <li>stacje uzdatniania wody</li>
-              <li>pompownie i stacje hydroforowe</li>
-              <li>zbiorniki wody pitnej i przemysłowej</li>
-            </ul>
-            <ul id="kanalizacja" class="hidden-offer offer-list">
-              <li>sieci kanalizacyjne z przyłączami</li>
-              <li>kanalizacja deszczowa, sanitarna i ogólnospławna</li>
-              <li>kanalizacja grawitacyjna, ciśnieniowa i podciśnieniowa</li>
-              <li>kanały otwarte, pompownie</li>
-              <li>zbiorniki retencyjne i retencyjne - infiltracyjne</li>
-            </ul>
-            <ul id="ciepłownictwo" class="hidden-offer offer-list">
-              <li>kotłownie (gazowe, olejowe oraz pompy ciepła)</li>
-              <li>sieci cieplne</li>
-              <li>węzły cieplne</li>
-            </ul>
-            <ul id="ochrona-środowiska" class="hidden-offer offer-list">
-              <li>
-                oczyszczalnie ścieków (deszczowych, sanitarnych, przemysłowych)
-              </li>
-              <li>obiekty gospodarki odpadowej</li>
-            </ul>
-          </div>
+          <div class="offer-details"></div>
         </div>
       </section>
 

@@ -1,10 +1,13 @@
 const myScript = function () {
   // Some amazing code...1.variables 2.methods 3. event listeners i initializations
 
-  //smooth scroll for offer and contact pages
-  //const scroll = new SmoothScroll('.navbar .smooth-scroll', {
-  // speed: 800
-  //});
+  // smooth scroll for offer and contact pages
+
+  /* eslint-disable no-unused-vars, no-undef */
+  const scroll = new SmoothScroll('.navbar .smooth-scroll', {
+    speed: 800
+  });
+  /* eslint-enable no-unused-vars, no-undef */
 
   //navigation
   const sectionProjects = document.querySelector('#projects');
@@ -106,81 +109,122 @@ const myScript = function () {
 
   setInterval(nextSlide, 2000);
 
-  //szczegoły oferty
-  function offerDisplay() {
-    const offerLinks = document.querySelectorAll('#offer ul li');
-    for (let link of offerLinks) {
-      let detailsId = link.getAttribute('title');
-      let detailsText = document.getElementById(detailsId);
-      const allDetails = document.querySelectorAll('.offer-details p, .offer-details ul');
 
-      // DODAĆ RESPONSYWNY POP-UP 
+  //szczegoły oferty
+
+  function mediaQueries() {
+
+    //obiekt ktory sprawdza czy cos jest wieksze niz 580-true
+    let widthMatch = window.matchMedia('(min-width: 580px)');
+
+    if (widthMatch.matches) {
+      //wiecej niz 580px
+      heroCaption('wide');
+      offerDisplayWide();
+    } else {
+      //mniej niz 580px
+      heroCaption('mobile');
+      offerDisplayMobile();
+    }
+
+    widthMatch.addEventListener('change', function (mm) {
+      if (mm.matches) {
+        console.log('wiecej niz 580px znow');
+        offerDisplayWide();
+        heroCaption('wide');
+      }
+      else {
+        console.log('mniej niz 580px znow');
+        heroCaption('mobile');
+        offerDisplayMobile();
+      }
+    });
+  }
+
+  function offerDisplayWide() {
+    console.log('offerdisplay wide');
+    const containerRight = document.querySelector('#offer .container-right');
+    const offerLinks = document.querySelectorAll('.offer-nav > li p');
+    const allDetails = document.querySelectorAll('.offer-list');
+    const boxWhite = document.querySelector('.offer-details');
+
+    //poka kontener
+    containerRight.style.display = 'block';
+    for (let details of allDetails) {
+      details.classList.remove('active-offer-mobile');
+    }
+    //dla kazdego linka
+    for (let link of offerLinks) {
+      //nasluchuj klikakania
+
       link.addEventListener('click', function () {
-        for (let allDetail of allDetails) {
-          allDetail.classList.add('hidden-offer');
-          if (allDetail.id === detailsId) {
-            detailsText.classList.remove('hidden-offer');
+        console.log('KLIK wide');
+        let title = link.getAttribute('title');
+        //zrob pętle po wszystkich deatalch
+        for (let details of allDetails) {
+          //sprawdz czy id detala to title linka
+          if (details.id === title) {
+            //jesli tak to wez jego rodzica, i daj mu nowe dziecko
+
+            boxWhite.appendChild(details);
+            //i usun klase active offer wide i nadaj mu klase active offer mobile
+            details.classList.add('active-offer-wide');
+          } else {
+            details.classList.remove('active-offer-wide');
           }
         }
       });
     }
   }
 
-  offerDisplay();
-
-
 
   function offerDisplayMobile() {
 
-    window.addEventListener('resize', function () {
-  
-      const containerRight = document.querySelector('#offer .container-right');
-      if (window.innerWidth < 580) {
+    const containerRight = document.querySelector('#offer .container-right');
+    const offerLinks = document.querySelectorAll('.offer-nav > li p');
+    const allDetails = document.querySelectorAll('.offer-list');
 
-        containerRight.style.display = 'none';
-        console.log('wywalilem container righ');
+    console.log('hello screentype is mobile!');
+    //chowam prawy kontener
+    containerRight.style.display = 'none';
 
-        //jak klikne na li z .offer-nav
-        //wezme od niego wartosc atrybutu title
-        //znajde po nim id mojej ul w .oofer-details
-        //wyswietle to ul albo jako dziecko mojego li
-        //togglując mu klasę hidden offer mobile 
+    //dla kazdego linka
+    for (let link of offerLinks) {
+      //nasluchuj klikakania
 
-      } else {
-        containerRight.style.display = 'block';
-        console.log('przywrocilem kontenerek');
-      }
-    });
+      link.addEventListener('click', function () {
+        console.log('KLIK mobile');
+        let title = link.getAttribute('title');
+        //zrob pętle po wszystkich deatalch
+        for (let details of allDetails) {
+          //sprawdz czy id detala to title linka
+          details.classList.remove('active-offer-wide');
+          if (details.id === title) {
+            //jesli tak to wez jego rodzica, i daj mu nowe dziecko
+            let parent = link.parentElement;
+            parent.appendChild(details);
+            //i usun klase active offer wide i nadaj mu klase active offer mobile
+            details.classList.add('active-offer-mobile');
+          } else {
+            details.classList.remove('active-offer-mobile');
+          }
+        }
+      });
 
-
-
-
-    //   if (x.matches) { // If media query matches
-    //     document.body.style.backgroundColor = "yellow";
-    //   } else {
-    //     document.body.style.backgroundColor = "pink";
-    //   }
-    // }
-
-    // let x = window.matchMedia("(max-width: 700px)")
-    // myFunction(x) // Call listener function at run time
-    // x.addListener(myFunction) // Attach listener function on state changes
+    }
   }
 
-  offerDisplayMobile();
+  function heroCaption(screensize) {
+    const caption = document.querySelector('#home .container-left p');
 
-  /* go up button
+    if (screensize === 'mobile') {
+      caption.innerText = 'Projektujemy sieci i obiekty związane z infrastrukturą techniczną, ze specjalizacją w sieciach zewnętrznych od 1990r.';
+    } else {
+      caption.innerText = 'Jesteśmy Firmą, która od 1990 r. zajmuje się projektowaniem sieci i obiektów związanych z infrastrukturą techniczną. Specjalizujemy się w projektowaniu sieci zewnętrznych: wodociągowych, gazowych, kanalizacyjnych i ciepłowniczych.';
+    }
+  }
 
-  const goUp = tubędzie buttonik
-
-  goUp.addEventListener('click', function () {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    });
-  });
-*/
+  mediaQueries();
 
 
   //wyswietlenie pelnego zdjecia w referencjach
@@ -225,6 +269,7 @@ const myScript = function () {
   //     mouseCursor.classList.add('could-click');
   //   });
   // });
+
 
 
 
