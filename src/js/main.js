@@ -272,11 +272,6 @@ const myScript = function () {
 
   // FORMULARZ KONTAKTOWY  
 
-  const form = document.querySelector('form');
-  const inputEmail = form.querySelector('.e-mail');
-  const inputMessage = form.querySelector('.message');
-  const formMessage = form.querySelector('.form-message');
-  const submitBtn = form.querySelector('.btn');
 
  
 
