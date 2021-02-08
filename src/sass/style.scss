@@ -156,7 +156,7 @@ section {
 
 .btn-cont {
   text-align: right;
-  margin: 100px 0 20px 0;
+  margin: 80px 0 20px 0;
 
   .btn {
     position: relative;
@@ -592,7 +592,7 @@ nav ul li a:focus {
   color: $white;
 }
 
-#contact .contact-form {
+#contact .contact-form form{
   display: flex;
   flex-direction: column;
 }
