@@ -164,13 +164,14 @@ section {
     color: $grey-dark;
     background-color: $blue;
     text-decoration: none;
-    font-size: em(18px);
+    font-size: 15px;
     font-family: $font-main;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
     -webkit-font-smoothing: antialiased;
     transition: 1s;
+    border: none;
 
     &:hover {
       background-color: $white;
@@ -178,6 +179,7 @@ section {
       font-weight: bolder;
       font-size: 17px;
       cursor: pointer;
+      border: none;
 
       .line-1 {
         animation: move1 1500ms infinite ease;

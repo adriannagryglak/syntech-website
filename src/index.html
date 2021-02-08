@@ -21,17 +21,31 @@
   <body>
     <div class="preload">
       <div class="water">
-        <img src="./images/logo.png" alt="syntech logo">
+        <img src="./images/logo.png" alt="syntech logo" />
       </div>
     </div>
     <header>
       <nav class="navbar">
         <ul>
-          <li id="mobile-nav-1"><a href="#offer" class="smooth-scroll">oferta</a></li>
-          <li id="mobile-nav-2"><a href="" onclick="return false;" class="projects-link">projekty</a></li>
-          <li id="mobile-nav-3"><a href="#" class="start" ><span class="logo start"></span></a></li>
-          <li id="mobile-nav-4"><a href="" onclick="return false;" class="references-link">referencje</a></li>
-          <li id="mobile-nav-5"><a href="#contact" class="smooth-scroll" >kontakt</a></li>
+          <li id="mobile-nav-1">
+            <a href="#offer" class="smooth-scroll">oferta</a>
+          </li>
+          <li id="mobile-nav-2">
+            <a href="" onclick="return false;" class="projects-link"
+              >projekty</a
+            >
+          </li>
+          <li id="mobile-nav-3">
+            <a href="#" class="start"><span class="logo start"></span></a>
+          </li>
+          <li id="mobile-nav-4">
+            <a href="" onclick="return false;" class="references-link"
+              >referencje</a
+            >
+          </li>
+          <li id="mobile-nav-5">
+            <a href="#contact" class="smooth-scroll">kontakt</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -151,7 +165,6 @@
       </section>
 
       <section id="offer">
-
         <div class="container-left">
           <h2>Oferujemy wykonanie następującej dokumentacji technicznej:</h2>
 
@@ -159,11 +172,14 @@
             <li>
               <p title="sieci-gazowe" tabindex="1">sieci gazowe</p>
               <ul id="sieci-gazowe" class="offer-list">
-                <li>sieci gazowe zewnętrzne, średniego i niskiego ciśnienia (z przyłączami)</li>
+                <li>
+                  sieci gazowe zewnętrzne, średniego i niskiego ciśnienia (z
+                  przyłączami)
+                </li>
                 <li>stacje redukcyjne</li>
               </ul>
             </li>
-            <li >
+            <li>
               <p title="wodociągi" tabindex="1">wodociągi</p>
               <ul id="wodociągi" class="offer-list">
                 <li>sieci wodociągowe z przyłączami</li>
@@ -196,13 +212,13 @@
               <p title="ochrona-środowiska" tabindex="1">ochrona środowiska</p>
               <ul id="ochrona-środowiska" class="offer-list">
                 <li>
-                  oczyszczalnie ścieków (deszczowych, sanitarnych, przemysłowych)
+                  oczyszczalnie ścieków (deszczowych, sanitarnych,
+                  przemysłowych)
                 </li>
                 <li>obiekty gospodarki odpadowej</li>
               </ul>
             </li>
           </ul>
-          
         </div>
 
         <div class="container-right">
@@ -214,18 +230,27 @@
         <div class="container-left">
           <h2>skontaktuj się z nami !</h2>
           <div class="contact-form">
-            <form method="post" id="form">
-              <input type="email" placeholder="Twój e-mail" class="e-mail" required />
-              <textarea placeholder="Tu wpisz treść zapytania" class="message" required></textarea>
+            <form method="POST" id="form" name="contact" data-netlify="true">
+              <input
+                type="email"
+                placeholder="Twój e-mail"
+                class="e-mail"
+                required
+                name="email"
+              />
+              <textarea
+                placeholder="Tu wpisz treść zapytania"
+                class="message"
+                required
+              ></textarea>
               <div class="form-message"></div>
               <div class="btn-cont">
-                <a class="btn">
-                  wyślij
-                  <span class="line-1"></span>
-                  <span class="line-2"></span>
-                  <span class="line-3"></span>
-                  <span class="line-4"></span>
-                </a>
+                <button type="submit" class="btn">wyślij
+                    <span class="line-1"></span>
+                    <span class="line-2"></span>
+                    <span class="line-3"></span>
+                    <span class="line-4"></span> 
+                </button>
               </div>
             </form>
           </div>
@@ -245,55 +270,88 @@
     </div>
 
     <section id="projects" class="hidden">
-
       <div class="projects-details">
         <p>Opracowanie projektowe</p>
         <p>Rodzaj dokumentacji</p>
         <p>Inwestor</p>
       </div>
-      
+
       <div class="projects-specifics">
         <ul class="project">
-          <li class="opracowanie"><p>Sieć wodociągowa w ul. Sanatoryjnej w Kowarach</p></li>
-          <li class="dokumentacja"><p>Projekt budowlany</p></li>            
+          <li class="opracowanie">
+            <p>Sieć wodociągowa w ul. Sanatoryjnej w Kowarach</p>
+          </li>
+          <li class="dokumentacja"><p>Projekt budowlany</p></li>
           <li class="inwestor"><p>Urząd Miasta w Kowarach</p></li>
         </ul>
         <ul class="project">
-          <li class="opracowanie"><p>Sieć wodociągowa na potrzeby socjalno bytowe i przeciwpożarowe Fabryki Papieru w Piechowicach</p></li>
-          <li class="dokumentacja"><p>Projekt budowlano-wykonawczy</p></li>            
+          <li class="opracowanie">
+            <p>
+              Sieć wodociągowa na potrzeby socjalno bytowe i przeciwpożarowe
+              Fabryki Papieru w Piechowicach
+            </p>
+          </li>
+          <li class="dokumentacja"><p>Projekt budowlano-wykonawczy</p></li>
           <li class="inwestor"><p>Fabryka Papieru w Piechowicach</p></li>
         </ul>
         <ul class="project">
-          <li class="opracowanie"><p>Rozbudowa ujęcia wody, hydroforni oraz sieci wodociągowej we wsi Radomiłowice gm. Lwówek Śląski</p></li>
-          <li class="dokumentacja"><p>Projekt budowlano-wykonawczy</p></li>            
+          <li class="opracowanie">
+            <p>
+              Rozbudowa ujęcia wody, hydroforni oraz sieci wodociągowej we wsi
+              Radomiłowice gm. Lwówek Śląski
+            </p>
+          </li>
+          <li class="dokumentacja"><p>Projekt budowlano-wykonawczy</p></li>
           <li class="inwestor"><p>Urząd Miasta i Gminy w Lwówku Śląskim</p></li>
         </ul>
         <ul class="project">
-          <li class="opracowanie"><p>Wodociąg doprowadzający wodę do Specjalnej Strefy Ekonomicznej w Wykrotach</p></li>
-          <li class="dokumentacja"><p>Projekt budowlano-wykonawczy</p></li>            
+          <li class="opracowanie">
+            <p>
+              Wodociąg doprowadzający wodę do Specjalnej Strefy Ekonomicznej w
+              Wykrotach
+            </p>
+          </li>
+          <li class="dokumentacja"><p>Projekt budowlano-wykonawczy</p></li>
           <li class="inwestor"><p>Urząd Miasta i Gminy Nowogrodziec</p></li>
         </ul>
         <ul class="project">
-          <li class="opracowanie"><p>Sieć wodociągowa w ul Sanatoryjnej w Kowarach</p></li>
-          <li class="dokumentacja"><p>Projekt budowlany</p></li>            
+          <li class="opracowanie">
+            <p>Sieć wodociągowa w ul Sanatoryjnej w Kowarach</p>
+          </li>
+          <li class="dokumentacja"><p>Projekt budowlany</p></li>
           <li class="inwestor"><p>Urząd Miasta w Kowarach</p></li>
         </ul>
         <ul class="project">
-          <li class="opracowanie"><p>Sieć wodociągowa na potrzeby socjalno bytowe i przeciwpożarowe Fabryki Papieru w Piechowicach</p></li>
-          <li class="dokumentacja"><p>Projekt budowlano-wykonawczy</p></li>            
+          <li class="opracowanie">
+            <p>
+              Sieć wodociągowa na potrzeby socjalno bytowe i przeciwpożarowe
+              Fabryki Papieru w Piechowicach
+            </p>
+          </li>
+          <li class="dokumentacja"><p>Projekt budowlano-wykonawczy</p></li>
           <li class="inwestor"><p>Fabryka Papieru w Piechowicach</p></li>
         </ul>
         <ul class="project">
-          <li class="opracowanie"><p>Rozbudowa ujęcia wody, hydroforni oraz sieci wodociągowej we wsi Radomiłowice gm. Lwówek Śląski</p></li>
-          <li class="dokumentacja"><p>Projekt budowlano-wykonawczy</p></li>            
+          <li class="opracowanie">
+            <p>
+              Rozbudowa ujęcia wody, hydroforni oraz sieci wodociągowej we wsi
+              Radomiłowice gm. Lwówek Śląski
+            </p>
+          </li>
+          <li class="dokumentacja"><p>Projekt budowlano-wykonawczy</p></li>
           <li class="inwestor"><p>Urząd Miasta i Gminy w Lwówku Śląskim</p></li>
         </ul>
         <ul class="project">
-          <li class="opracowanie"><p>Wodociąg doprowadzający wodę do Specjalnej Strefy Ekonomicznej w Wykrotach</p></li>
-          <li class="dokumentacja"><p>Projekt budowlano-wykonawczy</p></li>            
+          <li class="opracowanie">
+            <p>
+              Wodociąg doprowadzający wodę do Specjalnej Strefy Ekonomicznej w
+              Wykrotach
+            </p>
+          </li>
+          <li class="dokumentacja"><p>Projekt budowlano-wykonawczy</p></li>
           <li class="inwestor"><p>Urząd Miasta i Gminy Nowogrodziec</p></li>
         </ul>
-      </div>  
+      </div>
     </section>
 
     <section id="references" class="hidden">
@@ -345,7 +403,9 @@
           <img src="./images/wodnik.jpg" alt="" />
         </div>
         <div class="text-container">
-          <p>Przedsiębiorstwo Wodociągów i Kanalizacji „WODNIK” w Jeleniej Górze</p>
+          <p>
+            Przedsiębiorstwo Wodociągów i Kanalizacji „WODNIK” w Jeleniej Górze
+          </p>
         </div>
       </div>
     </section>
