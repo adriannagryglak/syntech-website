@@ -167,7 +167,7 @@ const myScript = function () {
             //jesli tak to wez jego rodzica, i daj mu nowe dziecko
 
             boxWhite.appendChild(details);
-            //i usun klase active offer wide i nadaj mu klase active offer mobile
+            //i usun klase active offer mobile i nadaj mu klase active offer wide
             details.classList.add('active-offer-wide');
           } else {
             details.classList.remove('active-offer-wide');

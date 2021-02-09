@@ -11,28 +11,66 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
   height: 100vh;
 }
 
-.sucess-page .thank-you-text{
+.thank-you-text{
     margin: 50px;
     padding: 0;
     font-family: "Montserrat", sans-serif;
+    font-size: 30px;
 }
 
-.sucess-page .go-back-link{
+.go-back-link{
     margin: 50px;
-    padding: 0;
+    padding: 15px;
+    width: 300px;
     font-family: "Raleway", sans-serif;
+    font-size: 20px;
     text-decoration: none;
     text-transform: uppercase;
+    position: relative;
+    transition: color 0.5s ease;
 }
 
-.sucess-page .go-back-link:visited{
+
+
+.go-back-link:visited{
     color: #f7f7f7;
 }
 
-.sucess-page .go-back-link:hover{
+.go-back-link:hover{
     color: #9fd4e4;
+}
+
+.go-back-link:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 1px;
+    left: 50%;
+    position: absolute;
+    background: #9fd4e4;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+
+.go-back-link:hover:after { 
+    width: 100%; 
+    left: 0; 
+}
+
+@media (max-width: 525px){
+
+    .thank-you-text{
+        font-size: 20px;
+    }
+
+    .go-back-link{
+        font-size: 15px;
+        width: 200px;
+    }
 }
