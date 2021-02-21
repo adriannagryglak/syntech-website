@@ -625,6 +625,10 @@ nav ul li a:focus {
   right: 0;
 }
 
+.contact-form .btn:focus{
+  outline: none;
+}
+
 #contact .container-right {
   position: relative;
   padding-left: 0;
