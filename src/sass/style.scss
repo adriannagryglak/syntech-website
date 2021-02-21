@@ -593,8 +593,13 @@ nav ul li a:focus {
   margin: 0 0 30px auto;
   max-width: 300px;
   height: 30px;
-  text-align: center;
+  text-align: right;
   font-family: $font-main;
+}
+
+.contact-form .e-mail:focus,
+.contact-form .message:focus{
+  outline: none;
 }
 
 .contact-form .e-mail::placeholder {
